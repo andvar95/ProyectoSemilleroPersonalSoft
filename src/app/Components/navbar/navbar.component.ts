@@ -112,7 +112,7 @@ export class NavbarComponent implements OnInit {
       else if(data.event === 'new::subuser'){
 
             this.type="follow"
-            console.log(this.followed,this.follower)
+            console.log(`${data.user.name}-${data.user.followed[0].name}`)
             this.content=`${data.user.name}-${data.user.followed[0].name}`
             this.notification = true
             

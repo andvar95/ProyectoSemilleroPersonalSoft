@@ -55,10 +55,11 @@ export class NotificationComponent implements OnInit,OnChanges {
     
     console.log(this.content)
     if(this.type==='follow'){
-      console.log(this.names)
+   
       this.names = this.content.split("-")
       this.follower = this.names[0]
       this.followed = this.names[1]
+      console.log(this.names)
 
    
         if(this.followed === this.storage.obtenerUsuario().name){
