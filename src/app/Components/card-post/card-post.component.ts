@@ -93,10 +93,10 @@ commentAction(){
 allComents(id:number){
 
   this.comments.getAllComments(id).subscribe((data:OldPost)=>{
-    console.log("comen")
-    console.log(data)
+
+    //console.log(data)
     this.new_comments= [...this.new_comments,...data.comments]  as Comments[]
-    console.log("fin")
+
     console.log(this.new_comments)
   })
 }

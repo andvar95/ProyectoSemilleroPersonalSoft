@@ -41,9 +41,9 @@
             <a *ngIf="seeMore==false" (click)="seeMoreFuntion()" class="texto-vinculo" ><div>Ver más</div></a> 
             <a *ngIf="seeMore==true" (click)="seeMoreFuntion()" class="texto-vinculo" ><div>Ver menos</div></a> 
          </div>   
-        <form class="coment-template" (ngSubmit)="doComment(post.ID)">
+        <div class="coment-template" >
         <div> <input type="text" [(ngModel)]="comment" class="nuevo-comentario"></div><a (click)="doComment(post.ID)"><i class="fas fa-paper-plane s-ico"></i></a>
-        </form>
+        </div>
     </div>
 </div>
 
