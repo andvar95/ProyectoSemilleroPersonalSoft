@@ -17,8 +17,8 @@ export class UsersService {
     return this.http.get<Logueduser[]>(`${environment.REGISTER_USER_URL}`)
   }
 
-  search(txt:string){
-    return this.http.get(`${environment.SEARCH_USER}${txt}`)
+  search(txt:string):Observable<Logueduser[]>{
+    return this.http.get<Logueduser[]>(`${environment.SEARCH_USER}${txt}`)
   }
 
   getUser(id:number){

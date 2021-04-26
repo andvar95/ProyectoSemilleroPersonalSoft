@@ -78,6 +78,7 @@ export class NotificationComponent implements OnInit,OnChanges {
        
           this.userservice.search(this.content).subscribe((userVer:any)=>{
           const us = userVer[0] as Logueduser
+          console.log(us)
         
           if(us.followed){
             if(
