@@ -1,0 +1,49 @@
+<div class="modal">
+
+    <form autocomplete="off" 
+    class ="contenedor_pub"
+    (ngSubmit)="createGroup(form)"
+    #form="ngForm"
+    >    
+        
+    <div class="title"><h2>Nuevo Grupo</h2></div>
+        <br><br>
+        <div class="createPost">
+            <div>
+                <label>Nombre</label>
+                    <div>
+                        <input 
+                        class="form-item"
+                        type="text" 
+                        name="nombre"
+                        placeholder=" Nombre del grupo"
+                        [ngModel]="group.name"
+                        minlength="1"
+                        required
+                        #name="ngModel">
+                    </div>
+            </div>
+
+            <div>
+                <label>Description</label>
+                <textarea 
+                id="post" 
+                name="description"
+                required
+                class="nuevo-post"
+                [ngModel]="group.description"
+                minlength="1"
+                #description="ngModel"
+                >
+                 </textarea>
+            </div>
+
+            <small *ngIf="form.submitted && form.invalid" class="texto-error">Debe contener ambos campos</small>
+            <div>
+                <button type="submit" class="btn-acciones">Crear</button>
+            </div>
+    <span class="closebottom-modal" (click)="cerrar()" ><i class="fas fa-times"></i></span>
+    </div>
+    </form>
+    
+</div>

@@ -1,0 +1,48 @@
+<div class="modal">
+
+    <form autocomplete="off" 
+            class ="contenedor_pub"
+            (ngSubmit)="publish()"
+            [formGroup]="form"
+            >    
+        
+    <div class="title"><h2>Crear Publicación</h2></div>
+        <br>
+    <div class="createPost">
+    <div>    <label for="post">¿Que estás pensando?</label>
+    <textarea id="post" 
+            name="postedText" 
+            class="nuevo-post"
+            formControlName="posted_text"
+            
+    >
+    </textarea>
+  
+    </div>
+
+    <div>
+    <div class="img-container" *ngIf = "estado">
+        <img class="imgup" [src]="image_url" width="100%" height="40%" >
+    </div>
+    </div>
+
+   <div>
+    <input id ="img_up" 
+        (change)="upImage($event)"
+         accept=".jpg, .png, .jpeg" 
+         type ="file"
+         formControlName="image_url">
+</div>
+
+    <div>
+    <button type="submit" class="btn-acciones">Publicar</button>
+    </div>
+    <span class="closebottom-modal" (click)="cerrar()" ><i class="fas fa-times"></i></span>
+
+    </div>
+</form>
+
+    
+
+
+</div>

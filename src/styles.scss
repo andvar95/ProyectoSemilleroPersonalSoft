@@ -1,1 +1,402 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+
+*{
+    padding:0;
+    margin:0;
+    font-family: 'Montserrat', sans-serif;
+    outline:none;
+ 
+    
+}
+
+
+
+
+
+
+/*ProyectoFinal*/
+ul{
+list-style:none;
+}
+:root{
+    --blue-color:rgb(27, 123, 248);
+    --blue-link:rgb(57, 134, 235);
+    --blue-hover-color:rgb(20, 103, 211);
+    --shadow-color:rgba(90, 90, 90, 0.616);
+    --gray-color-1:rgb(99, 99, 99);
+    --gray-color-2:rgb(161, 161, 161);
+    --gray-color-3:rgb(216, 216, 216);
+    --red-close:rgba(255, 66, 66, 0.616);
+    --green-acept:rgb(75, 196, 101);
+    --bg-color:#F5F5F5;
+}
+.ph_user{
+    width:20px;
+    height:20px;
+    border-radius:20px;
+    border: 1px solid black;
+}
+.titulo-gris{
+    color:rgb(71, 71, 71);
+}
+
+.texto-vinculo{
+    font-size:0.8rem;
+    justify-content:left;
+}
+.texto-vinculo:hover{
+    color:var(--blue-color);
+    text-decoration:underline;
+}
+
+a{
+    text-decoration: none;
+    
+}
+.texto-izquierdo{
+
+    text-align: left;
+    width:25vw;
+}
+
+body{
+    background-color:var(--bg-color); 
+}
+
+
+
+
+
+
+/* Formularios -ITEMS */
+
+.formulario{
+    display:flex; 
+    justify-content:space-evenly;
+    flex-direction: column;
+    align-items: left;
+    text-align:left;
+    background-color: white;
+
+    height: 70vh;
+    width:30vw;
+}
+
+.form-item
+{   border:none;
+    height: 6vh;
+    width:30vw;
+    background-color: rgba(93, 167, 231, 0.205);
+    color:rgb(165, 162, 162);
+    outline:none;
+    font-size:1rem;
+    
+}
+.form-item:hover{
+    color:black;
+}
+
+.form-item-ico{
+    display:grid;
+    grid-template-columns: 95% 5%;
+}
+.form-item-ico>span{
+    margin:auto 0;
+   
+}
+
+.form-btn{
+ background-color:var(--blue-color);   
+ color:rgb(255, 255, 255); 
+ border-radius:5px;
+}
+
+.form-btn:hover{
+    background-color:var(--blue-hover-color); 
+}
+
+
+.aviso{
+    height:100%;
+    background-color:var(--blue-color);   
+    color:white; 
+    display:flex; 
+    align-items: center;
+    text-align:center;
+    justify-content:center;
+    flex-direction: column;
+}
+
+.titulo-gris{
+    color:rgb(71, 71, 71);
+}
+.texto-vinculo{
+text-decoration: none;
+color:var(--blue-link);
+font-size:16px;
+
+}
+.texto-vinculo:hover{
+    color: var(--blue-color);
+    text-decoration:underline;
+}
+
+
+
+.texto-error{
+    color:rgb(192, 11, 11);
+}
+
+.campo-error{
+    border:1px solid rgb(192, 11, 11);
+}
+.campo-accept{
+    color:var(--green-acept)
+}
+.border-accept{
+    border:1px solid var(--green-acept)
+}
+
+
+/* MAIN*/
+
+
+.btn-acciones{
+    padding:1% 7%;
+ 
+    margin:2% 11%;
+    background-color:rgb(27, 123, 248);   
+ color:white; 
+ border-radius: 5px;
+ border:none;
+}
+
+
+
+/* Card-POsts*/
+
+.card-post{
+    
+    width: 80%;
+    border:1px solid rgb(207, 207, 207);
+    border-radius:5px;
+    box-shadow:1px 1px 2px 1px rgb(172, 172, 172);
+    background-color:white;
+    margin:1% 0%;
+    overflow:auto;
+    }
+
+
+    .lateral{
+        display:flex;
+        width:94%;
+        max-width:94%;
+        height:70vh;
+        justify-content: center;
+        position:sticky;
+        top:15%;
+        overflow:auto;
+       
+    }
+
+    
+    .main-post{
+        width:100%;
+        margin-bottom:5%;
+    }
+
+.new-p{
+    text-align:left;
+    
+    }
+    
+    textarea{
+        
+        width:80%;
+        float:left;
+        resize:none;
+        margin-left:11%;
+    }
+    
+    .user-name{
+        display:flex;
+        align-items: center;
+        margin-left: 2%;
+        width:15vw;
+
+    }
+    .card-user{
+        width:40%;
+        text-align: left;
+        padding: 2% 5%;
+    }
+    .ph_user{
+      
+        border-radius:300px;
+        width:40px;
+        height: 40px;
+        border:none;
+     
+    }
+    
+    .user-n{
+    display:flex;
+    width:100%;
+   
+    
+    
+    }
+    
+
+    .card-titulo{
+        text-align: left;
+        padding:2% 5%;
+        margin-bottom:2%;
+    }
+    
+    .photo{
+      
+        width:100%;
+         height:40vh;
+    }
+    
+    .card-contenido{
+        text-align: justify;
+        padding:0 5%;
+    }
+    
+    .reacciones-comentarios{
+        display:flex;
+        justify-content: space-around;
+        border-top: 1px solid var(--gray-color-2);
+        border-bottom: 1px solid var(--gray-color-2);
+        padding:2% 0%;
+        margin-bottom:4%;
+    }
+    .reacciones-comentarios>a{
+        padding:5px 10px;
+        border-radius:10px;
+       
+    }
+    .reacciones-comentarios>a:hover{
+        background-color: var(--gray-color-3);
+    }
+
+    .reacciones-comentarios>a:hover>span{
+            color: var(--blue-color);
+    }
+    
+    .reacciones-comentarios>a:hover>i{
+        color: var(--blue-color);
+}
+
+
+    .comentarios{
+        text-align: left;   
+        padding:5%;
+    }
+    
+    .coment-user{
+        display:flex;
+        width: 100%;
+        margin-bottom:15px;
+    
+    }
+    
+    .texto-comentario{
+        width: 80%;
+        background-color: rgba(93, 167, 231, 0.205);
+        border-radius: 10px;
+        text-align:justify;
+        margin:0% 1%;
+        padding:0 1%;
+    }
+    
+    .nuevo-comentario{
+       border:none;
+        border-radius: 15px;
+        width:98%;
+        overflow:scroll;
+       
+     
+        margin:0 1%;
+    }
+    
+    
+    
+    
+    img{
+
+        background-repeat: no-repeat;
+        background-size:cover;
+        border:none;
+    }    
+    
+    @media(max-width:600px){
+        .card-post{
+            width:90%;
+        }
+    }
+    
+    .posts{
+        display:flex;
+        align-items:center;
+        justify-content: center;
+    }
+
+
+
+/*MODAL */
+
+.modal{
+	background:rgba(rgb(0, 0, 0),.2);
+    top: 0;
+    position:fixed;
+    left: 0;
+    bottom:0;
+	height: 100vh;
+	width: 100vw;
+    z-index:2051;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    overflow:hidden;
+    
+    
+    
+}
+
+.closebottom-modal{
+    position:absolute;
+    margin-right: 1%;
+    margin-top:1%;
+    top:0;
+    right:0;
+    padding: 15px 20px;
+    border-radius:100%;
+    background-color:var(--gray-color-3);
+}
+
+.closebottom:hover{
+    color:white;
+    background-color:var(--red-close);
+}
+.nuevo-post{
+    border-radius: 0px;
+    height: 10vh;
+    margin-bottom:2%;
+}
+
+
+
+
+/*ICONS */
+
+.add{
+    color:var(--gray-color-1);
+}
+.add:hover{
+    color:var(--blue-color)
+}

@@ -1,0 +1,94 @@
+<form class="formulario" [formGroup] ="form"  (ngSubmit)="registrar()" > 
+        <div class="texto-error" *ngIf="errorEnable">{{erroMsj}}</div>
+    <h2 class="titulo-gris texto-izquierdo">Registrate</h2>
+    <br>
+
+    <label>Nombre</label>
+    <div class="form-item-ico">
+    <input type="text" 
+            placeholder="  Juan Pérez"
+            class="form-item"
+            formControlName="name"
+            >
+            <span *ngIf="form.controls.name.valid">
+                <i class="fas fa-check campo-accept"></i>
+            </span>
+            <span *ngIf="form.controls.name.invalid && form.controls.name.dirty">
+                <i class="fas fa-times texto-error"></i>
+              </span>
+        </div>
+        <small *ngIf="putName" class="texto-error">
+            Ingrese un Nombre       
+        </small>
+    <label>Correo</label>
+    <div class="form-item-ico">
+    <input type="email" 
+            placeholder="  usuario@mail.com"
+            class="form-item"
+            formControlName="email"
+            >
+          <span *ngIf="form.controls.email.valid">
+              <i class="fas fa-check campo-accept"></i>
+            </span>
+          <span *ngIf="form.controls.email.invalid && form.controls.email.dirty">
+              <i class="fas fa-times texto-error"></i>
+            </span>
+           
+        </div>
+        <small *ngIf="putEmail" class="texto-error">
+            Ingrese un Correo      
+        </small>
+    <div formGroupName="passwords">
+    <label>Contraseña</label>
+    <div class="form-item-ico">
+    <input  id="password"
+            type ="password"
+            placeholder="*******"
+            class="form-item"
+            formControlName="pass1"
+            [class.border-accept]="validPass"
+            >     
+            <span (click)="showPassword()" >
+                <i *ngIf="!show" class="fas fa-eye"></i>
+                <i *ngIf="show" class="fas fa-eye-slash"></i>
+            </span>  
+           
+    </div>
+
+    <label>Confirme su Contraseña</label>
+    <div>
+        <input type ="password"
+                placeholder="*******"
+                class="form-item"
+                formControlName="pass2"
+                [class.campo-error]="verifyPass"
+                [class.border-accept]="validPass"
+                >     
+    </div>
+</div>
+
+<small *ngIf="putPass1" class="texto-error">
+        Ingrese una contraseña    
+</small>
+
+   <small *ngIf="putPass2" class="texto-error">
+        Debe confirmar contraseña  
+   </small>
+
+<small class="texto-error" *ngIf="verifyPass ">Contraseñas no Coinciden</small>
+    <div>
+        <input  
+                type="submit" 
+                value ="Registrate"
+                class="form-item form-btn">
+    </div>
+
+    <div> 
+
+        <a (click)="irLogin()"><p class="texto-vinculo">¿Ya te has unido? Iincia Sesión</p></a>
+    </div>
+    <div class="row">
+        {{form.status}}
+        {{form.value|json}}
+    </div>
+</form>

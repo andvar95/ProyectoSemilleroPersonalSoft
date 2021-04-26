@@ -1,0 +1,6 @@
+<div class="coment-user"> 
+  <img src={{infoComment.User?.avatar}} class="ph_user">
+  <span class="texto-comentario">
+    <div [routerLink]= "['/home/profile']" [queryParams]= "{usuario:infoComment.User.name}" class="texto-vinculo">{{infoComment.User?.name}} <small>{{infoComment.CreatedAt | date:'short'}}</small>  </div>
+   {{infoComment.comment}}</span>
+ </div>

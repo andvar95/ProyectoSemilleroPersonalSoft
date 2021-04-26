@@ -1,0 +1,51 @@
+
+textarea{
+    margin:0;
+    width:100%;
+}
+
+.form-item{
+    background-color:#ffffff;
+    color:black;
+    border:1px solid rgb(44, 44, 44);
+}
+.btn-acciones{
+
+    margin:5% auto;
+    bottom:0;
+    height:5vh;
+    width:100%;
+
+}
+
+.form-item{
+    width:100%;
+}
+.contenedor_pub{    
+    display:flex;
+    flex-direction: column;
+    align-items:center;
+    text-align: left;
+    padding:2% 5%;
+    background-color:white;
+    width:20%;
+    height:50%;
+    position:relative;
+    margin:0;
+    border-radius:15px;
+
+    overflow:auto;
+}
+.contenedor_pub>*{
+    width:90%;
+}
+.nuevo-comentario{
+    border-radius: 0px;
+    height: 7vh;
+}
+
+.title{
+    border-bottom:1px solid var(--gray-color-2);
+    text-align:center;
+}
+

@@ -1,0 +1,1 @@
+export interface Errorvalidación{[s:string]:boolean}

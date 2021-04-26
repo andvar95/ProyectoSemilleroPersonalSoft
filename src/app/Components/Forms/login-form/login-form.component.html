@@ -1,0 +1,50 @@
+<div class="formulario" > 
+
+<div *ngIf="errorEnable" class="texto-error">{{errorMsj}}</div>
+    
+    <h2 class="titulo-gris texto-izquierdo">Inicia Sesión</h2>
+    <br>
+
+    <label>Correo</label>
+    <div>
+    <input type="email" 
+            placeholder="  usuario@mail.com"
+            class="form-item"
+            [(ngModel)]="user.email">
+    </div>
+    <small *ngIf="putEmail"
+    class="texto-error">Ingrese un correo</small>
+    <label>Contraseña</label>
+    <div class="form-item-ico">
+    <input  id="password"
+            type ="password"
+            placeholder="  mi contraseña"
+            class="form-item"
+            [(ngModel)]="user.password">   
+            <span (click)="showPassword()" >
+                <i *ngIf="!show" class="fas fa-eye"></i>
+                <i *ngIf="show" class="fas fa-eye-slash"></i>
+            </span>  
+    </div>
+    <small *ngIf="putPassword"
+    class="texto-error">Ingrese una contraseña</small>
+
+    <div><input type="checkbox"> Recuerdame</div>
+
+    <div>
+        <input (click)="login()" 
+                type="button" 
+                value ="Iniciar Sesión"
+                class="form-item form-btn">
+    </div>
+
+    <div> 
+        <!--a> <p class="texto-vinculo">¿Olvidaste tu contraseña?</p></a-->
+
+        <a (click)="irRegistro()" ><p class="texto-vinculo">¿No te has unido? Regístrate</p></a>
+    </div>
+    <!--div class="row">
+      
+        {{user|json}}
+    </div-->
+</div>

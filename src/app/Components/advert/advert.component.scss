@@ -1,0 +1,48 @@
+.title-card{
+    text-align: center;
+    width: 20vw;
+}
+.user-n{
+   
+width: 20vw;
+padding-bottom: 5px;
+border-bottom:1px solid black;
+}
+
+.members{
+    .user-n{
+        width: 30vw;
+    }
+}
+
+.contenido{
+    overflow:auto;
+   
+}
+
+
+
+
+
+.user-name{
+ 
+    width:100%;
+}
+
+.members{
+    width:30vw;
+}
+
+
+.cont{
+    justify-content:space-between;
+}
+
+.texto-vinculo{
+    overflow: auto;
+}
+
+.disable{
+    pointer-events:none;
+    cursor:default;
+}

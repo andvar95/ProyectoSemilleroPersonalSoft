@@ -1,0 +1,27 @@
+<div class= "contenido">
+
+<div class="title-card" *ngIf="type!='Search'"><h2>{{title}}</h2></div>
+<!--div class="title-card" *ngIf="type=='Search'"><h3><strong>Resultados: {{list.length}} </strong></h3></div>
+<br *ngIf="type!='Search'"-->
+<ul >
+    <li *ngFor ="let item of list">
+        <div class="card-user">
+            <div class="user-n" [class.members]="title.includes('Miembros de')"> 
+                <img *ngIf="item.avatar" src={{item.avatar}} class="ph_user"> 
+                <img *ngIf="item.imageUrl" src={{item.imageUrl}} class="ph_user"> 
+                <span class=" cont user-name">
+                    <a id="name" 
+                    class="texto-vinculo" 
+                   (click)="gotoProfile(item.ID,item.name)" > {{item.name}}</a>
+                    <span *ngIf="type=='Gr'"><a (click)="addToGroup(item.ID)"><i class="fas fa-plus-circle fa-lg add"></i></a></span>
+                    <span *ngIf="type=='Us'"><a (click)="follow(item.ID)"><i class="fas fa-user-friends fa-lg add"></i></a></span>
+                </span>
+        </div>
+         </div>
+    </li>
+ 
+
+ 
+</ul>
+
+</div>

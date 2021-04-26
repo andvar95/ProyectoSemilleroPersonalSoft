@@ -1,0 +1,24 @@
+<div class="contenido">
+    
+    <div class="card-user_p">
+        <div class="user-n"> 
+            <img src = {{currentGroup.imageUrl}} class="ph_user"> 
+            <span class="user-name">
+                <div>
+                    <div>{{currentGroup.name}}</div>
+                    <br>
+                    <!--div>Seguidiores: 0   </div-->
+                </div>
+            </span>
+            <span style="border: 1px sold black; margin-top:2%;">
+                <a (click)="joinGroup(currentGroup.ID)" *ngIf="!join" ><i class="fas fa-user-plus fa-lg add"></i></a>
+                <a *ngIf="join" ><i class="fas fa-user-check fa-lg add" ></i></a>
+            </span>
+        </div>
+     </div>
+
+
+
+
+</div>
+

@@ -1,0 +1,49 @@
+<div class="card-post main-post" >
+    <div class="card-user">
+       <div class="user-n"> 
+          <img src={{post.user.avatar}} class="ph_user"> 
+          <span>
+             <span class="user-name">
+                <a class="texto-vinculo" 
+                [routerLink]= "['/home/profile']" 
+                [queryParams]= "{usuario:post.user.name}" >
+                  {{post.user.name}}</a></span>
+          <small (click)="gotoPost()"  class="user-name texto-vinculo">{{post.CreatedAt|date:'short'}}</small></span></div>
+    </div>
+
+
+    <div class="card-titulo">{{post.posted_text}}</div>
+
+
+    <div *ngIf="post.image_url">
+    <img [src]="post.image_url"  class="photo">
+   </div>
+    <div class="reactions">
+        
+    </div>
+
+    <div class="comentarios">
+       <div class="reacciones-comentarios">           
+        <a (click)="doReaction(post.ID)"><i [class.reacted]="Ireacted" class="far fa-thumbs-up fa-lg"></i><span > <span *ngIf="post.reactions">{{post.reactions.length}}</span>  Reaccionar</span></a>
+        <a (click)="commentAction()"><i class="far fa-comments fa-lg"></i><span> {{new_comments.length}} Comentar</span></a>
+        </div>
+
+
+
+        <div class="coment" *ngIf="new_comments.length>0">
+           
+            <app-comment-template *ngIf="seeMore==false"  [infoComment]="new_comments[0]"></app-comment-template>
+            <div  *ngIf="seeMore==true"  >
+               <div *ngFor="let c of new_comments | reverse">
+                  <app-comment-template [infoComment]="c"></app-comment-template>
+               </div>
+            </div>
+            <a *ngIf="seeMore==false" (click)="seeMoreFuntion()" class="texto-vinculo" ><div>Ver más</div></a> 
+            <a *ngIf="seeMore==true" (click)="seeMoreFuntion()" class="texto-vinculo" ><div>Ver menos</div></a> 
+         </div>   
+        <form class="coment-template" (ngSubmit)="doComment(post.ID)">
+        <div> <input type="text" [(ngModel)]="comment" class="nuevo-comentario"></div><a (click)="doComment(post.ID)"><i class="fas fa-paper-plane s-ico"></i></a>
+        </form>
+    </div>
+</div>
+

@@ -1,0 +1,24 @@
+<div class="contenido" *ngIf="visible">
+
+
+
+    <div class="lateral">
+        <div class="card-post">
+        <app-advert></app-advert> 
+         
+     </div></div>
+<div>
+    <app-cardgroup [currentGroup]="Group"></app-cardgroup>
+
+    <div class="card-post">
+    <app-advert 
+                     [title]="groupname" 
+                     [list]="Group.users" 
+                     [type]="'Us'"
+                     ></app-advert>
+        </div>
+</div>
+
+
+
+</div>

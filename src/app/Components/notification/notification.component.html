@@ -1,0 +1,19 @@
+<div class="notification"  *ngIf="visible">
+<div class="content" >
+   <span *ngIf="type=='comentado'"><i class="fas fa-comment-dots fa-2x not"></i></span>
+   <span *ngIf="type=='reaccionado'"><i class="fas fa-heart fa-2x reac"></i></span>
+   <span *ngIf="type=='follow'"><i class="fas fa-user-friends fa-2x reac"></i></span>
+   <span *ngIf="type=='post'"><i class="fas fa-share-alt fa-2x reac"></i></span>
+   <span *ngIf="type=='subgroup'"><i class="fas fa-user-friends fa-2x reac"></i></span>
+
+   <span *ngIf="type=='comentado' || type=='reaccionado'"> {{content}} ha {{type}} una publicación  {{to}}</span>  
+   <span *ngIf="type=='follow'"> {{follower}} {{follow_msj}} </span>  
+   <span *ngIf="type=='post'"> {{content}} ha hecho una publicacion</span> 
+   <span *ngIf="type=='subgroup'"> {{names[1]}} se unió al grupo {{names[0]}}</span>  
+   
+</div>
+<br>
+<div class="more">
+   <span (click)="goToPost()" class="texto-vinculo">Ver más</span>
+   <span (click)="closeWindow()" class="texto-vinculo">Cerrar</span></div>
+</div>

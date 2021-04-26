@@ -1,0 +1,23 @@
+<div class= "contenido">
+ 
+
+    <div class="lateral">
+        <div class="card-post">
+        <app-advert></app-advert> 
+         
+     </div></div>
+    <div>
+       
+    <div *ngIf="user.name!= ''">
+      
+    <app-card-user [currentUser] = "user"></app-card-user>
+    
+        <app-newpost-template *ngIf ="myProfile" [currentUser] = "user"></app-newpost-template>
+
+        <div *ngFor="let post of Posts">
+            <app-card-post [post] ="post" ></app-card-post>
+
+        </div>
+    </div>
+    </div>
+</div>

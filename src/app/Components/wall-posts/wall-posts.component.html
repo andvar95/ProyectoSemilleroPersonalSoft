@@ -1,0 +1,52 @@
+
+
+<div class="contenedor" (window:scroll)="doSomethingOnInternalScroll($event)">
+
+
+
+      <div class="lateral">
+         <div class="card-post">
+       
+          <app-advert 
+                     [title]="'¿Quizá conoces?'" 
+                     [list]="Users" 
+                     [type]="'Us'"
+                     (propagar)="modifyAdvert($event)"></app-advert>
+         </div>
+      </div>
+
+
+      <div>
+
+         <!--div class="new-p card-post main-post">
+            <div class="card-user">
+               <div class="user-n"> <img src = {{currentUser.avatar}} class="ph_user"> <span class="user-name">{{currentUser.name}}</span></div>
+            </div>
+            <textarea id="text-area" class="nuevaPub"></textarea>
+            <input (click)="openModal()" type="submit" value="Crear Publicación" class ="btn-acciones">
+         </div-->
+
+         <app-newpost-template [currentUser]="currentUser"></app-newpost-template>
+         
+         <div *ngFor="let post of Posts">
+             <app-card-post [post] ="post" ></app-card-post>
+
+         </div>
+            
+      </div>
+      
+      <div class="lateral">
+         <div class="card-post">
+            <app-advert 
+                     [title]="'Grupos Recomendados'" 
+                     [list]="Groups" 
+                     [type]="'Gr'"
+                     (propagar)="modifyAdvert($event)"></app-advert>   
+         </div>
+      </div>
+
+      <a class="texto-vinculo" (click)="getPosts()" >Ver más</a>
+
+</div>
+
+

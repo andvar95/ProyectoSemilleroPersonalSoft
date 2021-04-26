@@ -1,0 +1,68 @@
+<div *ngIf="notification" ><app-notification 
+  [type]="type" 
+  [content]="content"
+  [id_post]="post_id"
+  (propagar)="listenPropagation($event)"></app-notification></div>
+
+<nav >
+
+    <ul class="nav navi">
+    <div class="nav-1">
+      <li>
+        <a>LULÉ</a>
+      </li>
+  
+   
+      <li>
+        <a><div class="buscador"><span><i class=" fas fa-search search-icon"></i></span><span><input (keyup)="searchFc($event)" type="search"></span></div></a>
+        <ul class="resuls-list"*ngIf="Users.length>0">
+           <app-advert [title]="''" [list]="Users" [type]="'search'"></app-advert>
+        </ul>
+      </li>
+      
+    </div>
+     
+  <div class="nav-2">
+    <li class="options">
+      <a [routerLink]= "['wall']" >
+        <i class="fas fa-home fa-2x ico" routerLinkActive="selected">
+        </i>
+        
+      </a>
+    </li>
+    <li>
+      <a>
+        <i class="fas fa-bell fa-2x ico"></i> <small [class.notificated]="notificationInfo.length>0" class="count-notf">{{notificationInfo.length}}</small></a>
+        <ul class="noti-nav" *ngIf="notificationInfo.length>0">
+         <li *ngFor="let n of notificationInfo"> <app-noti-navbar [information]="n"></app-noti-navbar></li>
+        </ul>
+
+      
+    </li>
+
+
+    <li  class="options"> 
+      <a (click)="openModalGroup()" >
+        <i class="fas fa-users fa-2x ico"></i></a>
+          <!--ul><li>Notif</li></ul-->
+  </li>
+   
+    <li class="options">
+      <a  [routerLink]= "['profile']" [queryParams]= "{usuario:currentUser.name}"><img routerLinkActive="selected-profile" src={{currentUser.avatar}} class="ph_user"></a>
+    </li>
+
+    <li>
+      <a><i class="fas fa-sort-down"></i></a>
+      <ul>
+        <li  class="options">
+        <a><div class="card-user">
+          <div class="user-n"> <img src = {{currentUser.avatar}} class="ph_user"> <span class="user-name">{{currentUser.name}}</span></div>
+       </div></a></li>
+        <li><a (click)="exit()" class="options">Salir</a></li>
+      </ul>
+    </li>
+  
+  </div>
+    </ul>
+  
+    </nav>
