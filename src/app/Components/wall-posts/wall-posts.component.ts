@@ -25,6 +25,18 @@ export class WallPostsComponent implements OnInit, OnDestroy,OnChanges {
   subscribe(postList=>{
     this.Posts = postList
   })
+  EvtSub = this.socketservice.getEventSuscription().
+  subscribe(evt=>{
+    console.log(evt)
+    if(evt.event==="new::post"){
+
+      this.Posts.unshift(evt.post as OldPost)
+        
+    }
+  }
+
+  )
+
   Users:Logueduser[] = []
   Groups:Group[] = []
   notification = false;
@@ -37,6 +49,7 @@ export class WallPostsComponent implements OnInit, OnDestroy,OnChanges {
     private postService:PostsService,
     private userservice:UsersService,
     private groupservice:GroupService,
+    private socketservice:SocketService
   ) {
     //console.log("inicio")
    }
