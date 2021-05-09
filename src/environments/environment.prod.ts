@@ -1,5 +1,16 @@
 export const environment = {
   production: true,
+  SOCKET_URL:'ws://18.189.21.84:5050/ws',
+  REGISTER_USER_URL : 'http://18.189.21.84:5050/users',
+  LOGIN_URL : 'http://18.189.21.84:5050/auth',
+  GET_ALL_POSTS_URL:'http://18.189.21.84:5050/posts',
+  GET_POST_BY_USER:'http://18.189.21.84:5050/posts/user',
+  COMMENTS_API_URL:'http://18.189.21.84:5050/comments',
+  REACTIONS_API_URL:'http://18.189.21.84:5050/reactions',
+  GROUP_API_URL:'http://18.189.21.84:5050/groups',
+  ADD_USER_GROUP:'http://18.189.21.84:5050/groups/append',
+  FOLLOW_USER:'http://18.189.21.84:5050/users/follow',
+  SEARCH_USER:'http://18.189.21.84:5050/search?text=',
   firebaseConfig:{
     apiKey: "AIzaSyDvpC1UTmrTy75_BR6cPwly0P1Mb_2hsFI",
     authDomain: "courses-project-aa1b2.firebaseapp.com",
